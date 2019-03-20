@@ -9,19 +9,19 @@
 import Foundation
 import Result
 
-enum CustomerError: Error {
-    case noSuchFile
+enum CustomerRepositoryError: Error {
+    case parsingError
 }
 
 final class CustomerRepository {
 
     let adapter: CustomerLoadable
 
-    init(adapter: CustomerLoadable = CustomerFileAdapter()) {
+    init(adapter: CustomerLoadable = CustomerFileAdapter(resourceName: "customers", resourceExtension: "txt")) {
         self.adapter = adapter
     }
 
-    func fetchCustomers(result: (Result<[Customer], CustomerError>) -> Void) {
+    func fetchCustomers(result: (Result<[Customer], CustomerRepositoryError>) -> Void) {
         adapter.fetchCustomerData { customerResult in
             switch customerResult {
             case let .success(resultData):
@@ -35,10 +35,10 @@ final class CustomerRepository {
                     })
                     result(.success(results))
                 } else {
-                    result(.failure(.noSuchFile))
+                    result(.failure(.parsingError))
                 }
-            case .failure(_):
-                result(.failure(.noSuchFile))
+            case .failure:
+                result(.failure(.parsingError))
             }
         }
     }

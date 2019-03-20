@@ -14,13 +14,19 @@
 		A0F7609E2241F82A0082E6A5 /* InvitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7609D2241F82A0082E6A5 /* InvitedViewController.swift */; };
 		A0F760A02241FA9D0082E6A5 /* TitleSubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7609F2241FA9D0082E6A5 /* TitleSubtitleViewModel.swift */; };
 		A2DBF3FF3FC35060153E8BE5 /* Pods_InviterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35C58AE0EE10880F7BEC26A /* Pods_InviterTests.framework */; };
+		DD72C8B72242CEA100BC1C47 /* customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB752B922417E4D00BB1502 /* customers.txt */; };
+		DD72C8BA2242DE8F00BC1C47 /* CustomerRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72C8B92242DE8F00BC1C47 /* CustomerRepositorySpec.swift */; };
+		DD72C8BD2242E75300BC1C47 /* CustomerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72C8BC2242E75300BC1C47 /* CustomerSpec.swift */; };
+		DD72C8BF2242E7AD00BC1C47 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72C8BE2242E7AD00BC1C47 /* Coordinate.swift */; };
+		DD72C8C12242EDA700BC1C47 /* CoordinateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72C8C02242EDA700BC1C47 /* CoordinateSpec.swift */; };
 		DDB752972241371900BB1502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752962241371900BB1502 /* AppDelegate.swift */; };
 		DDB7529E2241371B00BB1502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB7529D2241371B00BB1502 /* Assets.xcassets */; };
 		DDB752A12241371B00BB1502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB7529F2241371B00BB1502 /* LaunchScreen.storyboard */; };
-		DDB752AC2241371B00BB1502 /* InviterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752AB2241371B00BB1502 /* InviterTests.swift */; };
 		DDB752BA22417E4D00BB1502 /* customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB752B922417E4D00BB1502 /* customers.txt */; };
 		DDB752BC22418EDB00BB1502 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752BB22418EDB00BB1502 /* Customer.swift */; };
 		DDB752C0224289E900BB1502 /* CustomerFileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752BF224289E900BB1502 /* CustomerFileAdapter.swift */; };
+		DDB752C52242BD3300BB1502 /* CustomerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752C42242BD3300BB1502 /* CustomerLoadable.swift */; };
+		DDB752CB2242BF7E00BB1502 /* CustomerFileAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752CA2242BF7E00BB1502 /* CustomerFileAdapterSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,17 +50,22 @@
 		A0F7609D2241F82A0082E6A5 /* InvitedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedViewController.swift; sourceTree = "<group>"; };
 		A0F7609F2241FA9D0082E6A5 /* TitleSubtitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleViewModel.swift; sourceTree = "<group>"; };
 		D8EF39C332FBAD5C3916F1E3 /* Pods-InviterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InviterTests.debug.xcconfig"; path = "Target Support Files/Pods-InviterTests/Pods-InviterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD72C8B92242DE8F00BC1C47 /* CustomerRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRepositorySpec.swift; sourceTree = "<group>"; };
+		DD72C8BC2242E75300BC1C47 /* CustomerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSpec.swift; sourceTree = "<group>"; };
+		DD72C8BE2242E7AD00BC1C47 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		DD72C8C02242EDA700BC1C47 /* CoordinateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSpec.swift; sourceTree = "<group>"; };
 		DDB752932241371900BB1502 /* Inviter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inviter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB752962241371900BB1502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB7529D2241371B00BB1502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB752A02241371B00BB1502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDB752A22241371B00BB1502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDB752A72241371B00BB1502 /* InviterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InviterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDB752AB2241371B00BB1502 /* InviterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviterTests.swift; sourceTree = "<group>"; };
 		DDB752AD2241371B00BB1502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDB752B922417E4D00BB1502 /* customers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = customers.txt; sourceTree = "<group>"; };
 		DDB752BB22418EDB00BB1502 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		DDB752BF224289E900BB1502 /* CustomerFileAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFileAdapter.swift; sourceTree = "<group>"; };
+		DDB752C42242BD3300BB1502 /* CustomerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLoadable.swift; sourceTree = "<group>"; };
+		DDB752CA2242BF7E00BB1502 /* CustomerFileAdapterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFileAdapterSpec.swift; sourceTree = "<group>"; };
 		F35C58AE0EE10880F7BEC26A /* Pods_InviterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InviterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +109,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DD72C8B82242DE7D00BC1C47 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DD72C8B92242DE8F00BC1C47 /* CustomerRepositorySpec.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DD72C8BB2242E74300BC1C47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD72C8BC2242E75300BC1C47 /* CustomerSpec.swift */,
+				DD72C8C02242EDA700BC1C47 /* CoordinateSpec.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DDB7528A2241371900BB1502 = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +151,6 @@
 			children = (
 				DDB752BE2242891A00BB1502 /* Common */,
 				DDB752BD2242890500BB1502 /* Invited */,
-				DDB752B622416C3300BB1502 /* Assets */,
-				DDB752BB22418EDB00BB1502 /* Customer.swift */,
-				A0F760952241EF4A0082E6A5 /* CustomerRepository.swift */,
-				DDB752BF224289E900BB1502 /* CustomerFileAdapter.swift */,
 			);
 			path = Inviter;
 			sourceTree = "<group>";
@@ -134,7 +158,7 @@
 		DDB752AA2241371B00BB1502 /* InviterTests */ = {
 			isa = PBXGroup;
 			children = (
-				DDB752AB2241371B00BB1502 /* InviterTests.swift */,
+				DDB752C82242BF6B00BB1502 /* Invited */,
 				DDB752AD2241371B00BB1502 /* Info.plist */,
 			);
 			path = InviterTests;
@@ -151,10 +175,13 @@
 		DDB752BD2242890500BB1502 /* Invited */ = {
 			isa = PBXGroup;
 			children = (
-				A0F760992241F6DF0082E6A5 /* InvitedView.xib */,
-				A0F7609B2241F7070082E6A5 /* InvitedView.swift */,
+				DDB752C72242BD9100BB1502 /* ViewModels */,
+				DDB752C62242BD8600BB1502 /* Views */,
+				DDB752C32242BD1F00BB1502 /* Adapters */,
+				DDB752C22242BD1600BB1502 /* Repositories */,
+				DDB752B622416C3300BB1502 /* Assets */,
+				DDB752C12242BD0000BB1502 /* Models */,
 				A0F7609D2241F82A0082E6A5 /* InvitedViewController.swift */,
-				A0F7609F2241FA9D0082E6A5 /* TitleSubtitleViewModel.swift */,
 			);
 			path = Invited;
 			sourceTree = "<group>";
@@ -168,6 +195,67 @@
 				DDB752A22241371B00BB1502 /* Info.plist */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DDB752C12242BD0000BB1502 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DDB752BB22418EDB00BB1502 /* Customer.swift */,
+				DD72C8BE2242E7AD00BC1C47 /* Coordinate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DDB752C22242BD1600BB1502 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A0F760952241EF4A0082E6A5 /* CustomerRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DDB752C32242BD1F00BB1502 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				DDB752BF224289E900BB1502 /* CustomerFileAdapter.swift */,
+				DDB752C42242BD3300BB1502 /* CustomerLoadable.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		DDB752C62242BD8600BB1502 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0F760992241F6DF0082E6A5 /* InvitedView.xib */,
+				A0F7609B2241F7070082E6A5 /* InvitedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDB752C72242BD9100BB1502 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0F7609F2241FA9D0082E6A5 /* TitleSubtitleViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DDB752C82242BF6B00BB1502 /* Invited */ = {
+			isa = PBXGroup;
+			children = (
+				DD72C8BB2242E74300BC1C47 /* Models */,
+				DD72C8B82242DE7D00BC1C47 /* Repositories */,
+				DDB752C92242BF7100BB1502 /* Adapter */,
+			);
+			path = Invited;
+			sourceTree = "<group>";
+		};
+		DDB752C92242BF7100BB1502 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				DDB752CA2242BF7E00BB1502 /* CustomerFileAdapterSpec.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +289,7 @@
 				DDB752A32241371B00BB1502 /* Sources */,
 				DDB752A42241371B00BB1502 /* Frameworks */,
 				DDB752A52241371B00BB1502 /* Resources */,
+				3161DEBBB06EA494A9581F49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD72C8B72242CEA100BC1C47 /* customers.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +384,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Inviter/Pods-Inviter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3161DEBBB06EA494A9581F49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InviterTests/Pods-InviterTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InviterTests/Pods-InviterTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		31E1D6960292568268CD5520 /* [CP] Check Pods Manifest.lock */ = {
@@ -370,8 +484,10 @@
 				A0F760A02241FA9D0082E6A5 /* TitleSubtitleViewModel.swift in Sources */,
 				A0F7609C2241F7070082E6A5 /* InvitedView.swift in Sources */,
 				A0F760962241EF4A0082E6A5 /* CustomerRepository.swift in Sources */,
+				DD72C8BF2242E7AD00BC1C47 /* Coordinate.swift in Sources */,
 				DDB752972241371900BB1502 /* AppDelegate.swift in Sources */,
 				A0F7609E2241F82A0082E6A5 /* InvitedViewController.swift in Sources */,
+				DDB752C52242BD3300BB1502 /* CustomerLoadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +495,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB752AC2241371B00BB1502 /* InviterTests.swift in Sources */,
+				DD72C8BA2242DE8F00BC1C47 /* CustomerRepositorySpec.swift in Sources */,
+				DDB752CB2242BF7E00BB1502 /* CustomerFileAdapterSpec.swift in Sources */,
+				DD72C8C12242EDA700BC1C47 /* CoordinateSpec.swift in Sources */,
+				DD72C8BD2242E75300BC1C47 /* CustomerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,9 +684,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8EF39C332FBAD5C3916F1E3 /* Pods-InviterTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SY87M4P7NJ;
 				INFOPLIST_FILE = InviterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -587,9 +707,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90F4F112D283D60B1F7FC416 /* Pods-InviterTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SY87M4P7NJ;
 				INFOPLIST_FILE = InviterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

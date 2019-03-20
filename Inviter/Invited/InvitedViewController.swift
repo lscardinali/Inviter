@@ -32,15 +32,19 @@ final class InvitedViewController: UIViewController {
             switch result {
             case let .success(customers):
                 let intercomCoordinates = Coordinate(latitude: 53.339428, longitude: -6.257664)
-
-                let models = customers.filter({ $0.coordinates.distanceFrom(coordinate: intercomCoordinates) < 100 })
-                                         .sorted(by: {$0.userId < $1.userId})
-                                         .map({ customer -> TitleSubtitleViewModel in
-                        let distanceValue = customer.coordinates.distanceFrom(coordinate: intercomCoordinates)
-                        let distanceFormated = String(format: "%.0f", distanceValue)
-                        return TitleSubtitleViewModel(title: "\(customer.userId) - \(customer.name)",
-                                                      subtitle: "Distance: \(distanceFormated) Km")
+                let models = customers.filter({
+                    if let validCoordinate = $0.coordinates {
+                        return validCoordinate.distanceFrom(coordinate: intercomCoordinates) < 100.0
+                    }
+                    return false
                 })
+                    .sorted(by: {$0.userId < $1.userId})
+                    .map({ customer -> TitleSubtitleViewModel in
+                        let distanceValue = customer.coordinates?.distanceFrom(coordinate: intercomCoordinates)
+                        let distanceFormated = String(format: "%.0f", distanceValue ?? 0)
+                        return TitleSubtitleViewModel(title: "\(customer.userId) - \(customer.name)",
+                            subtitle: "Distance: \(distanceFormated) Km")
+                    })
                 invitedView.setupView(models: models)
             case let .failure(error):
                 print(error)

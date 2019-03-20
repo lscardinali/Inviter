@@ -1,4 +1,6 @@
 PODS:
+  - Nimble (8.0.1)
+  - Quick (2.0.0)
   - Result (4.1.0)
   - Reusable (4.0.5):
     - Reusable/Storyboard (= 4.0.5)
@@ -8,21 +10,27 @@ PODS:
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
+  - Nimble
+  - Quick
   - Result
   - Reusable
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
     - Result
     - Reusable
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: a67ddec86b1cdf93475dfa7f62f7ce0b1cfab4e9
+PODFILE CHECKSUM: 664341b832836fdee353585b90e02f81bcf09a64
 
 COCOAPODS: 1.6.1

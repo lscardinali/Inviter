@@ -1,8 +1,8 @@
 //
-//  Customer.swift
+//  Coordinate.swift
 //  Inviter
 //
-//  Created by lucas.cardinali on 3/19/19.
+//  Created by lucas.cardinali on 3/20/19.
 //  Copyright © 2019 Lucas Salton Cardinali. All rights reserved.
 //
 
@@ -11,19 +11,7 @@ import Foundation
 enum CoordinateError: Error {
     case invalidValues
 }
-
-struct Customer: Codable {
-    let name: String
-    let userId: Int
-    let latitude: String
-    let longitude: String
-
-    var coordinates: Coordinate {
-        return Coordinate(latitude: latitude, longitude: longitude)
-    }
-}
-
-struct Coordinate: Codable {
+struct Coordinate {
     let latitude: Double
     let longitude: Double
 
@@ -31,9 +19,13 @@ struct Coordinate: Codable {
         return value * Double.pi / 180
     }
 
-    init(latitude: String, longitude: String) {
-        self.latitude = Double(latitude) ?? 0
-        self.longitude = Double(longitude) ?? 0
+    init?(latitude: String, longitude: String) {
+        if let validLatitude = Double(latitude), let validLongitude = Double(longitude) {
+            self.latitude = validLatitude
+            self.longitude = validLongitude
+        } else {
+           return nil
+        }
     }
 
     init(latitude: Double, longitude: Double) {

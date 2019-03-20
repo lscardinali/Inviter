@@ -7,9 +7,13 @@ target 'Inviter' do
   pod 'SwiftLint'
   pod 'Reusable'
   pod 'Result'
+
   
   target 'InviterTests' do
     inherit! :search_paths
+    pod 'Quick'
+    pod 'Nimble'
+#    pod 'SnapshotTesting'
     # Pods for testing
   end
 

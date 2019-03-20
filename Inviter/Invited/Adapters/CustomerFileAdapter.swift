@@ -9,18 +9,19 @@
 import Foundation
 import Result
 
-enum CustomerLoadError: Error {
-    case unableToLoad
-}
-
-protocol CustomerLoadable: class {
-    func fetchCustomerData(result: (Result<Data, CustomerLoadError>) -> Void)
-}
-
 final class CustomerFileAdapter: CustomerLoadable {
+    let resourceName: String
+    let resourceExtension: String
+    let bundle: Bundle
+
+    init(bundle: Bundle = Bundle.main, resourceName: String, resourceExtension: String) {
+        self.bundle = bundle
+        self.resourceName = resourceName
+        self.resourceExtension = resourceExtension
+    }
 
     func fetchCustomerData(result: (Result<Data, CustomerLoadError>) -> Void) {
-        if let filePath = Bundle.main.url(forResource: "customers", withExtension: "txt") {
+        if let filePath = bundle.url(forResource: resourceName, withExtension: resourceExtension) {
             do {
                 let data = try Data(contentsOf: filePath)
                 result(.success(data))
