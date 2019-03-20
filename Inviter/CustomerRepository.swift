@@ -15,22 +15,29 @@ enum CustomerError: Error {
 
 final class CustomerRepository {
 
+    let adapter: CustomerLoadable
+
+    init(adapter: CustomerLoadable = CustomerFileAdapter()) {
+        self.adapter = adapter
+    }
+
     func fetchCustomers(result: (Result<[Customer], CustomerError>) -> Void) {
-        if let filePath = Bundle.main.url(forResource: "customers", withExtension: "txt") {
-            do {
-                let data = try Data(contentsOf: filePath)
-                let jsonString = String(data: data, encoding: .utf8)
-                let jsonEntries = jsonString?.components(separatedBy: .newlines)
-                
-                let results: [Customer] = jsonEntries.map { entry in
-                    let dataEntry = Data(entry.utf8)
-                    return try? JSONDecoder().decode([Customer].self, from: data)
-                    } ?? []
-            
-                result(.success(results))
-                
-            } catch {
-                print(error)
+        adapter.fetchCustomerData { customerResult in
+            switch customerResult {
+            case let .success(resultData):
+                if let jsonString = String(data: resultData, encoding: .utf8) {
+                    let jsonEntries = jsonString.components(separatedBy: .newlines)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let results: [Customer] = jsonEntries.compactMap({
+                        let dataEntry = Data($0.utf8)
+                        return try? decoder.decode(Customer.self, from: dataEntry)
+                    })
+                    result(.success(results))
+                } else {
+                    result(.failure(.noSuchFile))
+                }
+            case .failure(_):
                 result(.failure(.noSuchFile))
             }
         }

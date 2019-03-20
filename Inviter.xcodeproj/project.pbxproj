@@ -20,6 +20,7 @@
 		DDB752AC2241371B00BB1502 /* InviterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752AB2241371B00BB1502 /* InviterTests.swift */; };
 		DDB752BA22417E4D00BB1502 /* customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB752B922417E4D00BB1502 /* customers.txt */; };
 		DDB752BC22418EDB00BB1502 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752BB22418EDB00BB1502 /* Customer.swift */; };
+		DDB752C0224289E900BB1502 /* CustomerFileAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB752BF224289E900BB1502 /* CustomerFileAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DDB752AD2241371B00BB1502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDB752B922417E4D00BB1502 /* customers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = customers.txt; sourceTree = "<group>"; };
 		DDB752BB22418EDB00BB1502 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		DDB752BF224289E900BB1502 /* CustomerFileAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFileAdapter.swift; sourceTree = "<group>"; };
 		F35C58AE0EE10880F7BEC26A /* Pods_InviterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InviterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,17 +121,12 @@
 		DDB752952241371900BB1502 /* Inviter */ = {
 			isa = PBXGroup;
 			children = (
+				DDB752BE2242891A00BB1502 /* Common */,
+				DDB752BD2242890500BB1502 /* Invited */,
 				DDB752B622416C3300BB1502 /* Assets */,
-				DDB752962241371900BB1502 /* AppDelegate.swift */,
-				DDB7529D2241371B00BB1502 /* Assets.xcassets */,
-				DDB7529F2241371B00BB1502 /* LaunchScreen.storyboard */,
-				DDB752A22241371B00BB1502 /* Info.plist */,
 				DDB752BB22418EDB00BB1502 /* Customer.swift */,
 				A0F760952241EF4A0082E6A5 /* CustomerRepository.swift */,
-				A0F760992241F6DF0082E6A5 /* InvitedView.xib */,
-				A0F7609B2241F7070082E6A5 /* InvitedView.swift */,
-				A0F7609D2241F82A0082E6A5 /* InvitedViewController.swift */,
-				A0F7609F2241FA9D0082E6A5 /* TitleSubtitleViewModel.swift */,
+				DDB752BF224289E900BB1502 /* CustomerFileAdapter.swift */,
 			);
 			path = Inviter;
 			sourceTree = "<group>";
@@ -149,6 +146,28 @@
 				DDB752B922417E4D00BB1502 /* customers.txt */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		DDB752BD2242890500BB1502 /* Invited */ = {
+			isa = PBXGroup;
+			children = (
+				A0F760992241F6DF0082E6A5 /* InvitedView.xib */,
+				A0F7609B2241F7070082E6A5 /* InvitedView.swift */,
+				A0F7609D2241F82A0082E6A5 /* InvitedViewController.swift */,
+				A0F7609F2241FA9D0082E6A5 /* TitleSubtitleViewModel.swift */,
+			);
+			path = Invited;
+			sourceTree = "<group>";
+		};
+		DDB752BE2242891A00BB1502 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DDB752962241371900BB1502 /* AppDelegate.swift */,
+				DDB7529D2241371B00BB1502 /* Assets.xcassets */,
+				DDB7529F2241371B00BB1502 /* LaunchScreen.storyboard */,
+				DDB752A22241371B00BB1502 /* Info.plist */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB752C0224289E900BB1502 /* CustomerFileAdapter.swift in Sources */,
 				DDB752BC22418EDB00BB1502 /* Customer.swift in Sources */,
 				A0F760A02241FA9D0082E6A5 /* TitleSubtitleViewModel.swift in Sources */,
 				A0F7609C2241F7070082E6A5 /* InvitedView.swift in Sources */,
@@ -508,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Inviter/Info.plist;
+				INFOPLIST_FILE = Inviter/Common/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Inviter/Info.plist;
+				INFOPLIST_FILE = Inviter/Common/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

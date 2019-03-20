@@ -8,21 +8,45 @@
 
 import Foundation
 
+enum CoordinateError: Error {
+    case invalidValues
+}
+
 struct Customer: Codable {
     let name: String
     let userId: Int
+    let latitude: String
+    let longitude: String
+
+    var coordinates: Coordinate {
+        return Coordinate(latitude: latitude, longitude: longitude)
+    }
 }
 
 struct Coordinate: Codable {
     let latitude: Double
     let longitude: Double
 
-    func compareDistanceWith(coordinate: Coordinate) -> Double {
-        let radius = 6371e3
-        let delta = (coordinate.longitude - longitude) * Double.pi / 180
-        let lat1 = latitude * Double.pi / 180
-        let lat2 = coordinate.latitude * Double.pi / 180
+    private func radiansOf(_ value: Double) -> Double {
+        return value * Double.pi / 180
+    }
 
-        return acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(delta)) * radius
+    init(latitude: String, longitude: String) {
+        self.latitude = Double(latitude) ?? 0
+        self.longitude = Double(longitude) ?? 0
+    }
+
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+
+    func distanceFrom(coordinate: Coordinate) -> Double {
+        let radius = 6371e3
+        let delta = radiansOf(coordinate.longitude - longitude)
+        let lat1 = radiansOf(latitude)
+        let lat2 = radiansOf(coordinate.latitude)
+
+        return (acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(delta)) * radius) / 1000
     }
 }

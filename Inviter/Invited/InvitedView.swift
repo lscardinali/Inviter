@@ -35,7 +35,7 @@ extension InvitedView: UITableViewDataSource {
         if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: "InvitedCell") {
             cell = dequeuedCell
         } else {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "InvitedCell")
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "InvitedCell")
         }
 
         let model = models[indexPath.row]
