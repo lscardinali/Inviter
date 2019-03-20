@@ -18,7 +18,7 @@ struct Coordinate: Codable {
     let longitude: Double
 
     func compareDistanceWith(coordinate: Coordinate) -> Double {
-        let radius = 6371e3;
+        let radius = 6371e3
         let delta = (coordinate.longitude - longitude) * Double.pi / 180
         let lat1 = latitude * Double.pi / 180
         let lat2 = coordinate.latitude * Double.pi / 180
