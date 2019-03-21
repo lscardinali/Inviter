@@ -16,25 +16,34 @@ enum CustomerRepositoryError: Error {
 final class CustomerRepository {
 
     let adapter: CustomerLoadable
+    let decoder: JSONLinesDecoder
 
     init(adapter: CustomerLoadable = CustomerFileAdapter(resourceName: "customers", resourceExtension: "txt")) {
         self.adapter = adapter
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        self.decoder = JSONLinesDecoder(decoder: jsonDecoder)
     }
 
-    func fetchCustomers(result: (Result<[Customer], CustomerRepositoryError>) -> Void) {
+    func fetchCustomers(within distance: Double, from coordinate: Coordinate,
+                        orderedById: Bool, result: (Result<[Customer], CustomerRepositoryError>) -> Void) {
         adapter.fetchCustomerData { customerResult in
             switch customerResult {
             case let .success(resultData):
-                if let jsonString = String(data: resultData, encoding: .utf8) {
-                    let jsonEntries = jsonString.components(separatedBy: .newlines)
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let results: [Customer] = jsonEntries.compactMap({
-                        let dataEntry = Data($0.utf8)
-                        return try? decoder.decode(Customer.self, from: dataEntry)
+                do {
+                    var customers = try decoder.decode(Customer.self, data: resultData)
+                    customers = customers.filter({
+                        if let validCoordinate = $0.coordinates {
+                            return validCoordinate.distanceFrom(coordinate: coordinate) < distance
+                        }
+                        return false
                     })
-                    result(.success(results))
-                } else {
+
+                    if orderedById {
+                        customers = customers.sorted(by: {$0.userId < $1.userId})
+                    }
+                    result(.success(customers))
+                } catch {
                     result(.failure(.parsingError))
                 }
             case .failure:

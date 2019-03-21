@@ -16,21 +16,18 @@ class CustomerFileAdapterSpec: QuickSpec {
 
     var sut: CustomerFileAdapter!
 
-    let bundle = Bundle(for: CustomerFileAdapterSpec.self)
-
     override func spec() {
         describe("The Customer File Adapter") {
             context("When loading data from a valid local file") {
                 it("Should load successfully") {
-                    self.sut = CustomerFileAdapter(bundle: self.bundle,
-                                                   resourceName: "customer",
+                    self.sut = CustomerFileAdapter(resourceName: "customers",
                                                    resourceExtension: "txt")
                     self.sut.fetchCustomerData { result in
                         switch result {
                         case let .success(value):
                             expect(value).toNot(beNil())
                             expect(value).to(beAKindOf(Data.self))
-                        case .failure(_):
+                        case .failure:
                              fail("Should not fail on loading this file")
                         }
 
@@ -43,14 +40,14 @@ class CustomerFileAdapterSpec: QuickSpec {
 
             context("When loading data from a Invalid local file") {
                 it("Should load successfully") {
-                    self.sut = CustomerFileAdapter(bundle: self.bundle, resourceName: "wrongfile", resourceExtension: "txt")
+                    self.sut = CustomerFileAdapter(resourceName: "wrongfile",
+                                                   resourceExtension: "txt")
                     self.sut.fetchCustomerData { result in
-//                        expect(result).to(be(Result<Data, CustomerLoadError>.Failure.self))
                         switch result {
-                        case .success(_):
+                        case .success:
                             fail("Should return data when loading this file")
                         case let .failure(error):
-                            expect(error).to(be(CustomerLoadError.unableToLoad))
+                            expect(error).to(beAKindOf(CustomerLoadError.self))
                         }
                     }
                 }

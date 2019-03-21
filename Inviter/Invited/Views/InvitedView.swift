@@ -9,19 +9,45 @@
 import Foundation
 import Reusable
 
+enum InvitedViewState {
+    case initial
+    case dataLoaded(models: [TitleSubtitleViewModel])
+    case errorOnLoad(message: String)
+}
+
 final class InvitedView: UIView, NibLoadable {
 
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var models: [TitleSubtitleViewModel] = []
 
-    func setupView(models: [TitleSubtitleViewModel]) {
-        self.models = models
-        if tableView.dataSource != nil {
-            tableView.reloadData()
-        } else {
-            tableView.dataSource = self
+    func setState(state: InvitedViewState) {
+        switch state {
+        case .initial:
+            statusLabel.isHidden = true
+            tableView.isHidden = true
+        case let .dataLoaded(models):
+            if models.isEmpty {
+                statusLabel.text = "No customers found in range"
+                statusLabel.isHidden = false
+                tableView.isHidden = true
+            } else {
+                statusLabel.isHidden = true
+                tableView.isHidden = false
+                self.models = models
+                if tableView.dataSource != nil {
+                    tableView.reloadData()
+                } else {
+                    tableView.dataSource = self
+                }
+            }
+        case let .errorOnLoad(message):
+            statusLabel.isHidden = false
+            statusLabel.text = message
+            tableView.isHidden = true
         }
     }
+
 }
 
 extension InvitedView: UITableViewDataSource {

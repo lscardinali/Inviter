@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2F2E394D03C07E65B28E7EBC /* Pods_Inviter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C4B92A2D2BF2316FFDC7AE /* Pods_Inviter.framework */; };
+		A004211122434520006482CC /* InvitedViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004211022434520006482CC /* InvitedViewControllerSpec.swift */; };
+		A0EDD7182243540700A76177 /* JSONLinesDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDD7172243540700A76177 /* JSONLinesDecoder.swift */; };
+		A0EDD71B22435E3C00A76177 /* JSONLinesDecoderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDD71A22435E3C00A76177 /* JSONLinesDecoderSpec.swift */; };
 		A0F760962241EF4A0082E6A5 /* CustomerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F760952241EF4A0082E6A5 /* CustomerRepository.swift */; };
 		A0F7609A2241F6DF0082E6A5 /* InvitedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F760992241F6DF0082E6A5 /* InvitedView.xib */; };
 		A0F7609C2241F7070082E6A5 /* InvitedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7609B2241F7070082E6A5 /* InvitedView.swift */; };
 		A0F7609E2241F82A0082E6A5 /* InvitedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7609D2241F82A0082E6A5 /* InvitedViewController.swift */; };
 		A0F760A02241FA9D0082E6A5 /* TitleSubtitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7609F2241FA9D0082E6A5 /* TitleSubtitleViewModel.swift */; };
 		A2DBF3FF3FC35060153E8BE5 /* Pods_InviterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35C58AE0EE10880F7BEC26A /* Pods_InviterTests.framework */; };
-		DD72C8B72242CEA100BC1C47 /* customers.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB752B922417E4D00BB1502 /* customers.txt */; };
 		DD72C8BA2242DE8F00BC1C47 /* CustomerRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72C8B92242DE8F00BC1C47 /* CustomerRepositorySpec.swift */; };
 		DD72C8BD2242E75300BC1C47 /* CustomerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72C8BC2242E75300BC1C47 /* CustomerSpec.swift */; };
 		DD72C8BF2242E7AD00BC1C47 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72C8BE2242E7AD00BC1C47 /* Coordinate.swift */; };
@@ -44,6 +46,9 @@
 		2CECDDCECF9AB0EB7BF1A879 /* Pods-Inviter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inviter.release.xcconfig"; path = "Target Support Files/Pods-Inviter/Pods-Inviter.release.xcconfig"; sourceTree = "<group>"; };
 		90F4F112D283D60B1F7FC416 /* Pods-InviterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InviterTests.release.xcconfig"; path = "Target Support Files/Pods-InviterTests/Pods-InviterTests.release.xcconfig"; sourceTree = "<group>"; };
 		9833DE3345F1065A0083ED70 /* Pods-Inviter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inviter.debug.xcconfig"; path = "Target Support Files/Pods-Inviter/Pods-Inviter.debug.xcconfig"; sourceTree = "<group>"; };
+		A004211022434520006482CC /* InvitedViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedViewControllerSpec.swift; sourceTree = "<group>"; };
+		A0EDD7172243540700A76177 /* JSONLinesDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLinesDecoder.swift; sourceTree = "<group>"; };
+		A0EDD71A22435E3C00A76177 /* JSONLinesDecoderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLinesDecoderSpec.swift; sourceTree = "<group>"; };
 		A0F760952241EF4A0082E6A5 /* CustomerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRepository.swift; sourceTree = "<group>"; };
 		A0F760992241F6DF0082E6A5 /* InvitedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitedView.xib; sourceTree = "<group>"; };
 		A0F7609B2241F7070082E6A5 /* InvitedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedView.swift; sourceTree = "<group>"; };
@@ -109,6 +114,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A0EDD71922435E2900A76177 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A0EDD71A22435E3C00A76177 /* JSONLinesDecoderSpec.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		DD72C8B82242DE7D00BC1C47 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +171,7 @@
 		DDB752AA2241371B00BB1502 /* InviterTests */ = {
 			isa = PBXGroup;
 			children = (
+				A0EDD71922435E2900A76177 /* Common */,
 				DDB752C82242BF6B00BB1502 /* Invited */,
 				DDB752AD2241371B00BB1502 /* Info.plist */,
 			);
@@ -193,6 +207,7 @@
 				DDB7529D2241371B00BB1502 /* Assets.xcassets */,
 				DDB7529F2241371B00BB1502 /* LaunchScreen.storyboard */,
 				DDB752A22241371B00BB1502 /* Info.plist */,
+				A0EDD7172243540700A76177 /* JSONLinesDecoder.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,6 +261,7 @@
 				DD72C8BB2242E74300BC1C47 /* Models */,
 				DD72C8B82242DE7D00BC1C47 /* Repositories */,
 				DDB752C92242BF7100BB1502 /* Adapter */,
+				A004211022434520006482CC /* InvitedViewControllerSpec.swift */,
 			);
 			path = Invited;
 			sourceTree = "<group>";
@@ -355,7 +371,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD72C8B72242CEA100BC1C47 /* customers.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +412,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-InviterTests/Pods-InviterTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -404,6 +420,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotTesting.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -483,6 +500,7 @@
 				DDB752BC22418EDB00BB1502 /* Customer.swift in Sources */,
 				A0F760A02241FA9D0082E6A5 /* TitleSubtitleViewModel.swift in Sources */,
 				A0F7609C2241F7070082E6A5 /* InvitedView.swift in Sources */,
+				A0EDD7182243540700A76177 /* JSONLinesDecoder.swift in Sources */,
 				A0F760962241EF4A0082E6A5 /* CustomerRepository.swift in Sources */,
 				DD72C8BF2242E7AD00BC1C47 /* Coordinate.swift in Sources */,
 				DDB752972241371900BB1502 /* AppDelegate.swift in Sources */,
@@ -498,7 +516,9 @@
 				DD72C8BA2242DE8F00BC1C47 /* CustomerRepositorySpec.swift in Sources */,
 				DDB752CB2242BF7E00BB1502 /* CustomerFileAdapterSpec.swift in Sources */,
 				DD72C8C12242EDA700BC1C47 /* CoordinateSpec.swift in Sources */,
+				A0EDD71B22435E3C00A76177 /* JSONLinesDecoderSpec.swift in Sources */,
 				DD72C8BD2242E75300BC1C47 /* CustomerSpec.swift in Sources */,
+				A004211122434520006482CC /* InvitedViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

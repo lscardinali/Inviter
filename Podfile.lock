@@ -7,6 +7,7 @@ PODS:
     - Reusable/View (= 4.0.5)
   - Reusable/Storyboard (4.0.5)
   - Reusable/View (4.0.5)
+  - SnapshotTesting (1.3.0)
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Quick
   - Result
   - Reusable
+  - SnapshotTesting
   - SwiftLint
 
 SPEC REPOS:
@@ -22,6 +24,7 @@ SPEC REPOS:
     - Quick
     - Result
     - Reusable
+    - SnapshotTesting
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -29,8 +32,9 @@ SPEC CHECKSUMS:
   Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
+  SnapshotTesting: d4bd40afcf104af96bce7b84f98084fdd817396a
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 664341b832836fdee353585b90e02f81bcf09a64
+PODFILE CHECKSUM: 0c8a1e5d437f2e59b10d0b844ec6f13d7b48c9ea
 
 COCOAPODS: 1.6.1

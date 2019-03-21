@@ -10,6 +10,10 @@ import UIKit
 
 final class InvitedViewController: UIViewController {
 
+    let repository: CustomerRepository
+    let invitedView = InvitedView.loadFromNib()
+    let hqCoordinates = Coordinate(latitude: 53.339428, longitude: -6.257664)
+
     init(repository: CustomerRepository = CustomerRepository()) {
         self.repository = repository
         super.init(nibName: nil, bundle: nil)
@@ -20,36 +24,29 @@ final class InvitedViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    let repository: CustomerRepository
-    let invitedView = InvitedView.loadFromNib()
-
     override func loadView() {
         self.view = invitedView
     }
 
     override func viewDidLoad() {
-        repository.fetchCustomers { result in
+        invitedView.setState(state: .initial)
+        fetchCustomers()
+    }
+
+    func fetchCustomers() {
+        repository.fetchCustomers(within: 100, from: hqCoordinates, orderedById: true) { result in
             switch result {
             case let .success(customers):
-                let intercomCoordinates = Coordinate(latitude: 53.339428, longitude: -6.257664)
-                let models = customers.filter({
-                    if let validCoordinate = $0.coordinates {
-                        return validCoordinate.distanceFrom(coordinate: intercomCoordinates) < 100.0
-                    }
-                    return false
+                let models = customers.map({ customer -> TitleSubtitleViewModel in
+                    let distanceValue = customer.coordinates?.distanceFrom(coordinate: hqCoordinates)
+                    let distanceFormated = String(format: "%.0f", distanceValue ?? 0)
+                    return TitleSubtitleViewModel(title: "\(customer.userId) - \(customer.name)",
+                        subtitle: "Distance: \(distanceFormated) Km")
                 })
-                    .sorted(by: {$0.userId < $1.userId})
-                    .map({ customer -> TitleSubtitleViewModel in
-                        let distanceValue = customer.coordinates?.distanceFrom(coordinate: intercomCoordinates)
-                        let distanceFormated = String(format: "%.0f", distanceValue ?? 0)
-                        return TitleSubtitleViewModel(title: "\(customer.userId) - \(customer.name)",
-                            subtitle: "Distance: \(distanceFormated) Km")
-                    })
-                invitedView.setupView(models: models)
-            case let .failure(error):
-                print(error)
+                invitedView.setState(state: .dataLoaded(models: models))
+            case .failure:
+                invitedView.setState(state: .errorOnLoad(message: "Couldn't load customers"))
             }
         }
     }
-
 }

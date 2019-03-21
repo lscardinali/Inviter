@@ -41,7 +41,7 @@ class CoordinateSpec: QuickSpec {
                     self.sut = Coordinate(latitude: 53.339428, longitude: -6.257664)
                     let testCoordinate = Coordinate(latitude: 52.986375, longitude: -6.043701)
                     let distance = self.sut.distanceFrom(coordinate: testCoordinate)
-                    expect(distance).to(equal(523))
+                    expect(distance).to(equal(41.768725500888351))
                 }
 
             }
